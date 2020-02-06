@@ -12,14 +12,14 @@ import cv2
 
 
 #DETECTED VIDEOS
+#Pilih kamera pada device
+#0 adalah primary camera dan 1 adalah second camera
 video = cv2.VideoCapture(0)
 while True:
-    _, frame = video.read()
-
-    edge = cv2.Canny(frame, 100, 100)
-
-    cv2.imshow("Face-Reconigtion", edge)
-
+    frame = video.read()
+    #convert video to canny
+    #edge = cv2.Canny(frame, 100, 100)
+    cv2.imshow("Face-Reconigtion", frame)
     exit = cv2.waitKey(1) & 0xff
 
     if exit == ord('x'):
